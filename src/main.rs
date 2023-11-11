@@ -8,7 +8,7 @@ fn main() {
     let sink = Sink::try_new(&stream_handle).unwrap();
 
     // Load a sound from a file, using a path relative to Cargo.toml
-    let file = BufReader::new(File::open("samples/lp-noise.wav").unwrap());
+    let file = BufReader::new(File::open("samples/noise.mp3").unwrap());
     // Decode that sound file into a source
     let source = Decoder::new(file).unwrap().buffered().repeat_infinite();
     sink.append(source);
